@@ -54,6 +54,7 @@ function findMatches() {
     }
     // add all values together
     // console.log(matchArr)
+    return sumOfPriorities
 }
 
-findMatches()
+console.log(findMatches())
