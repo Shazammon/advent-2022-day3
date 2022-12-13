@@ -32,7 +32,7 @@ function findMatches() {
                     match = true
                     // if match is found, add to an array
                     matchArr.push(runsack[compOneItemNum])
-                    console.log(runsack[compOneItemNum])
+                    // console.log(runsack[compOneItemNum])
                     break;
                 }
             }
@@ -43,6 +43,7 @@ function findMatches() {
     // find value of all letters in array
     // add all values together
     }
+    console.log(matchArr)
 }
 
 findMatches()
