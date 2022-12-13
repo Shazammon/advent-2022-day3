@@ -21,10 +21,10 @@ function findMatches() {
         strLength = runsack.length / 2
 
         // console.log(strLength) 
+
         // for each character, compare to character of second string
-        
+        let compOneItemNum = 0
         while (match === false) {
-            let compOneItemNum = 0
             // console.log(runsack[j])
             for (let j = 0; j < strLength; j++) {
             
