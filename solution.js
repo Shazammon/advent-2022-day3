@@ -57,4 +57,33 @@ function findMatches() {
     return sumOfPriorities
 }
 
-console.log(findMatches())
+// console.log(findMatches())
+
+function badgeFunction() {
+    let badgeArr = []
+    // upper for loop 
+    for (let i = 0; i < stringData.length/3; i+3) {
+        runsackOne = stringData[i] 
+        runsackTwo = stringData[i+1] 
+        runsackThree = stringData[i+2]
+        let match = '' 
+        for (let j = 0; j < runsackOne.length; j++) {
+            let charOne = runsackOne[j]
+            for (let k = 0; k < runsackTwo.length; k++) {
+                if (runsackOne[charOne] === runsackTwo[k]) {
+                    match = runsackOne[charOne]
+                    for (let l = 0; l < runsackThree.length; l++) {
+                        if (match === runsackThree[l]) {
+                            badgeArr.push(match)
+                            break;
+                        }
+                    }
+                }
+            }
+            charOne += 1
+        }
+    }
+
+}
+
+badgeFunction()
