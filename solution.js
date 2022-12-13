@@ -6,6 +6,8 @@ let data = fs.readFileSync('data.txt', 'utf-8')
 
 const stringData = data.split(/\r?\n/)
 
+const letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
 // console.log(stringData)
 
 function findMatches() {
@@ -14,6 +16,8 @@ function findMatches() {
     let match = false
     let runsack = ''
     let matchArr = []
+    let letterValue = 0
+    let sumOfPriorities = 0
     for (let i = 0; i < stringData.length; i++) {
         // find length of string and divide by two
         runsack = stringData[i]
@@ -38,12 +42,18 @@ function findMatches() {
             }
         compOneItemNum += 1
         }
-    match = false
+        match = false
 
-    // find value of all letters in array
-    // add all values together
     }
-    console.log(matchArr)
+    // find value of all letters in array
+    for (let k = 0; k < matchArr.length; k++) {
+        console.log(matchArr[k])
+        letterValue = letterArray.indexOf(matchArr[k]) + 1
+        console.log(letterValue)
+        sumOfPriorities = sumOfPriorities + letterValue
+    }
+    // add all values together
+    // console.log(matchArr)
 }
 
 findMatches()
