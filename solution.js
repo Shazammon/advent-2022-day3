@@ -67,18 +67,27 @@ function badgeFunction() {
         runsackTwo = stringData[i+1] 
         runsackThree = stringData[i+2]
         let match = '' 
+        let foundMatch = false
+        let currentChar = 0
+        let runsackTwoChar = runsackTwo.length - 1
+        let runsackThreeChar = runsackThree.length - 1
+        while (foundMatch === false) {
+            if (runsackOne[currentChar] === runsackTwo[runsackTwoChar]) {
+                match = runsackOne[currentChar]
+                while (foundMatch === false) {
+                    if (match === runsackThree[runsackThreeChar]) {
+                        badgeArr.push(match)
+                        foundMatch = true
+                    }
+                }
+            } else {
+                runsackTwoChar -= 1
+            }
+            currentChar += 1
+        } 
         for (let j = 0; j < runsackOne.length; j++) {
             let charOne = runsackOne[j]
             for (let k = 0; k < runsackTwo.length; k++) {
-                if (runsackOne[charOne] === runsackTwo[k]) {
-                    match = runsackOne[charOne]
-                    for (let l = 0; l < runsackThree.length; l++) {
-                        if (match === runsackThree[l]) {
-                            badgeArr.push(match)
-                            break;
-                        }
-                    }
-                }
             }
             charOne += 1
         }
