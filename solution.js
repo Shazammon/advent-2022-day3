@@ -22,20 +22,27 @@ function findMatches() {
 
         // console.log(strLength) 
         // for each character, compare to character of second string
+        
         while (match === false) {
+            let compOneItemNum = 0
+            // console.log(runsack[j])
             for (let j = 0; j < strLength; j++) {
-                let compartmentOneItemNum = j
-                // console.log(runsack[j])
-                if (runsack[j] === runsack[j+strLength] {
+            
+            if (runsack[compOneItemNum] === runsack[j+strLength]) {
                     match = true
-                    matchArr.push(runsack[j])
+                    // if match is found, add to an array
+                    matchArr.push(runsack[compOneItemNum])
+                    console.log(runsack[compOneItemNum])
+                    break;
                 }
             }
-            // match = false
+        compOneItemNum += 1
         }
-        // if match is found, add to an array
-        // find value of all letters in array
-        // add all values together
+    match = false
+
+    // find value of all letters in array
+    // add all values together
     }
 }
+
 findMatches()
