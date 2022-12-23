@@ -6,6 +6,9 @@ let data = fs.readFileSync('data.txt', 'utf-8')
 
 const stringData = data.split(/\r?\n/)
 
+// finalized code
+
+
 const letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 // console.log(stringData)
@@ -63,6 +66,7 @@ function badgeFunction() {
     let badgeArr = []
     // upper for loop 
     for (let i = 0; i < stringData.length/3; i+3) {
+        console.log(i)
         runsackOne = stringData[i] 
         runsackTwo = stringData[i+1] 
         runsackThree = stringData[i+2]
@@ -71,21 +75,26 @@ function badgeFunction() {
         let currentChar = 0
         let runsackTwoChar = runsackTwo.length - 1
         // let runsackThreeChar = runsackThree.length - 1
+        
+
         while (foundMatch === false) {
-            if (runsackOne[currentChar] === runsackTwo[runsackTwoChar]) {
-                match = runsackOne[currentChar]
-                for (let j = 0; j < runsackThree.length; j++) {
-                    if (match === runsackThree[j]) {
-                        badgeArr.push(match)
-                        foundMatch = true
-                        break;
+            for (let k = 0; k < runsackTwo.length; k++) {
+                if (runsackOne[currentChar] === runsackTwo[k]) {
+                    match = runsackOne[currentChar]
+                    for (let j = 0; j < runsackThree.length; j++) {
+                        if (match === runsackThree[j]) {
+                            badgeArr.push(match)
+                            foundMatch = true
+                            break;
+                        }
                     }
+                } else {
+                    runsackTwoChar -= 1
                 }
-            } else {
-                runsackTwoChar -= 1
             }
-            currentChar += 1
-        } 
+            currentChar += 1 
+        }
+        foundMatch = false 
     }
     console.log(badgeArr)
 }
